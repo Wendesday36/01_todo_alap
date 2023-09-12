@@ -1,19 +1,20 @@
+import MegjelenitSor from "./MegjelenitSor.js";
 class Megjelenit {
   #lista = [];
 
-  constructor(lista, hely) {
+  constructor(lista, szuloElem) {
     this.#lista = lista;
-    this.hely = hely;
 
-    $(hely).append(`<table class= table >`);
-    this.tablazat = $(hely).children(".table");
+    szuloElem.append(`<table class= table >`);
+    this.tablaElem = szuloElem.children("table");
 
     this.megjelenit();
   }
   megjelenit() {
-    this.#lista.forEach((element, index) => {
-      this.tablazat.append(`<tr><th>${index + 1}</th><td>${element.tevekenyseg}</td><td>${element.hatarido}</td></tr>`);
+    this.#lista.forEach((elem) => {
+      new MegjelenitSor(elem, this.tablaElem);
     });
   }
 }
+
 export default Megjelenit;
