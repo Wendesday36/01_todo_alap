@@ -1,11 +1,13 @@
+import Model from "../model/Model.js";
 import Megjelenit from "../view/MegjelenitView.js";
-import { TODOLIST2 } from "../adatok.js";
+
 import Urlap from "../view/UrlapView.js";
 class Controller {
   constructor() {
     const tarolo = $(".tarolo");
     const ujadat = $(".ujadat");
-    new Megjelenit(TODOLIST2, tarolo);
+    const MODEL = new Model()
+    new Megjelenit(MODEL.getList(), tarolo);
     new Urlap(ujadat, { tevekenyseg: "", hatarido: "" });
     $(window).on("torles", (event) => {
       console.log(event.detail);
@@ -18,10 +20,9 @@ class Controller {
     });
     $(window).on("ujadat", (event) => {
       //console.log(event.detail);
-      TODOLIST2.push(event.detail);
-      console.log(TODOLIST2);
+      MODEL.ujAdat(event.detail);
       tarolo.empty();
-      new Megjelenit(TODOLIST2, tarolo);
+      new Megjelenit(MODEL.getList(), tarolo);
     });
   }
 }

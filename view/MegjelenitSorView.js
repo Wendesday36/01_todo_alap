@@ -41,9 +41,9 @@ class MegjelenitSor {
       const element = this.#adat[key];
       txt += `<td>${element}</td>`;
     }
-    txt += `<td><span  class="torol" >❌</span>
+    txt += `<td><span  class="torol" >🚮</span>
     <span   class="kesz">✅</span> 
-    <span   class="megse" >🚮</span> </td>`;
+    <span   class="megse" >❌</span> </td>`;
     txt += `</tr>`;
 
     this.tablaElem.append(txt);
