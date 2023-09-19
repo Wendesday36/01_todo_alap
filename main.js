@@ -5,7 +5,7 @@ $(function () {
   const tarolo = $(".tarolo");
   const ujadat =$(".ujadat")
   new Megjelenit(TODOLIST2, tarolo);
-  new Urlap(ujadat,{tevékenység:"",határidő:""});
+  new Urlap(ujadat,{tevekenyseg:"",hatarido:""});
   $(window).on("torles", (event) => {
     console.log(event.detail);
   });

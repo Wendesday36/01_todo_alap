@@ -28,7 +28,7 @@ class Urlap {
     this.SzuloElem.append(txt);
   }
   adatgyujt(){
-    this.adat= {tevékenység:this.tevekenysegElem.val(),határidő:this.hataridoElem.val()}
+    this.adat= {tevekenyseg:this.tevekenysegElem.val(),hatarido:this.hataridoElem.val()}
     
   }
   #feltoles(esemenynev){
