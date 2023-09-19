@@ -11,8 +11,8 @@ class Megjelenit {
     this.megjelenit();
   }
   megjelenit() {
-    this.#lista.forEach((elem) => {
-      new MegjelenitSor(elem, this.tablaElem);
+    this.#lista.forEach((elem,index) => {
+      new MegjelenitSor(elem, this.tablaElem,index);
     });
   }
 }

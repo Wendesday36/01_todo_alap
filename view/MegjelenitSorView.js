@@ -1,9 +1,11 @@
 class MegjelenitSor {
   #adat = {};
-  constructor(adat, szuloElem) {
+  constructor(adat, szuloElem,index) {
     this.#adat = adat;
     this.tablaElem = szuloElem;
+    
     this.#sor();
+    this.index=index
     this.sorElem = this.tablaElem.children("tr:last-child");
     this.pipa = this.sorElem.children("td").children(".kesz");
     this.megse = this.sorElem.children("td").children(".megse");
@@ -49,7 +51,7 @@ class MegjelenitSor {
     this.tablaElem.append(txt);
   }
   #esemenyTrigger(esemenynev){
-    const esemenyem = new CustomEvent(esemenynev,{detail:this})
+    const esemenyem = new CustomEvent(esemenynev,{detail:this.index})
     window.dispatchEvent(esemenyem)
   }
 }
